@@ -1,0 +1,9 @@
+<h1>Room Type </h1>
+
+<p>
+  <strong>Room Type:</strong>
+  <%= @room_type.room_type %> <!-- Display the room type -->
+</p>
+
+<%= link_to 'Edit', edit_room_type_path(@room_type) %> <!-- Link to edit this room type -->
+<%= link_to 'Back to Room Types', room_types_path %> <!-- Link to go back to the index -->
