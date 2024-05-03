@@ -1,0 +1,26 @@
+
+<h1>Hotels</h1>
+
+
+
+
+
+
+    <% @hotels.each do |hotel| %>
+      <ol>
+        <li> <th>Name</th>: <%= hotel.name %></li>
+        <li>   <th>Address</th>: <%= hotel.address %></li>
+        <li>   <th>Contact</th>: <%= hotel.contact %></li>
+        <li> <th>TIN No</th>: <%= hotel.tinno %></li>
+        <li><%= link_to 'Show', hotel %></li>
+        <li><%= link_to 'Edit', edit_hotel_path(hotel) %></li>
+        <li><%= link_to "Destroy", hotel, data: {  turbo_method: :delete,  turbo_confirm: "Are you sure?" } %></li>
+       </ol>
+    <% end %>
+
+
+
+<br>
+
+<%= link_to 'New Hotel', new_hotel_path %>
+
