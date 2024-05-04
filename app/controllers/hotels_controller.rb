@@ -1,6 +1,8 @@
 # app/controllers/hotels_controller.rb
 
 class HotelsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create ,:destroy]
+
     before_action :set_hotel, only: [:show, :edit, :update, :destroy]
   
     def index

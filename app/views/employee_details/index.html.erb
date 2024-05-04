@@ -1,0 +1,18 @@
+<h1>Employee Details</h1>
+
+<% @employee_details.each do |employee_detail| %>
+  <div>
+    <h2><%= employee_detail.employee_name %></h2>
+    <p><strong>Parents Name:</strong> <%= employee_detail.parents_name %></p>
+    <p><strong>Contact Number:</strong> <%= employee_detail.contact_number_no %></p>
+    <p><strong>Identification Card:</strong> <%= employee_detail.identification_card %></p>
+    <p><strong>Designation:</strong> <%= employee_detail.designation %></p>
+    <p><strong>Joining Date:</strong> <%= employee_detail.joining_date %></p>
+    <%= link_to 'Show', employee_detail %>
+    <%= link_to "Destroy", employee_detail, data: {  turbo_method: :delete,  turbo_confirm: "Are you sure?" } %>
+
+  </div>
+<% end %>
+
+<%= link_to 'New Employee Detail', new_employee_detail_path %>
+

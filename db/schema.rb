@@ -10,8 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.1].define(version: 2024_05_03_100439) do
+  create_table "employee_details", force: :cascade do |t|
+    t.string "employee_name"
+    t.string "parents_name"
+    t.string "contact_number_no"
+    t.string "identification_card"
+    t.string "designation"
+    t.date "joining_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+=======
 
 ActiveRecord::Schema[7.1].define(version: 2024_05_03_061654) do
+>>>>>>> 54e003a21484b5bfa2ea6bcab4a35358bb11eb7b
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.text "address"
