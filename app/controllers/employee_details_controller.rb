@@ -1,13 +1,14 @@
 class EmployeeDetailsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create ,:destroy ,:update]
   before_action :set_employee_detail, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, only: [:create ,:destroy]
+
   
   def index
     @employee_details = EmployeeDetail.all
     render json: @employee_details
   end
 
-  def show
+  def show  
   end
 
   def new
