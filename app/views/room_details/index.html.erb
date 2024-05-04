@@ -1,0 +1,24 @@
+<h1>All Room Details</h1>
+
+<table>
+  <tr>
+    <th>Room Number</th>
+    <th>Rent per Day</th>
+    <th>Room Type</th>
+    <th>Actions</th>
+  </tr>
+  <% @room_details.each do |room_detail| %>
+    <tr>
+      <td><%= room_detail.room_no %></td>
+      <td><%= room_detail.rent_per_day %></td>
+      <td><%= room_detail.room_type&.room_type %></td> <!-- Display associated RoomType -->
+      <td>
+        <%= link_to 'Show', room_detail %> <!-- Link to show -->
+        <%= link_to 'Edit', edit_room_detail_path(room_detail) %> <!-- Link to edit -->
+      <li><%= link_to "Destroy", room_detail, data: {  turbo_method: :delete,  turbo_confirm: "Are you sure?" } %></li>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Room Detail', new_room_detail_path %> <!-- Link to create a new RoomDetail -->

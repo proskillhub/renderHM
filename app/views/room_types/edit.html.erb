@@ -1,0 +1,25 @@
+<h1>Edit Room Type</h1>
+
+<%= form_with(model: @room_type, local: true) do |form| %>
+  <% if @room_type.errors.any? %>
+    <div>
+      <h2><%= pluralize(@room_type.errors.count, 'error') %> prohibited this Room Type from being saved:</h2>
+      <ul>
+        <% @room_type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :room_type, 'Room Type' %> <!-- Label for room type -->
+    <%= form.text_field :room_type %> <!-- Text field for room type -->
+  </div>
+
+  <div>
+    <%= form.submit 'Update Room Type' %> <!-- Submit button -->
+  </div>
+<% end %>
+
+<%= link_to 'Back', room_types_path %> <!-- Link to go back to the index -->

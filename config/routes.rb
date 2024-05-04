@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   
+=======
+  get 'room_types/index'
+>>>>>>> 54e003a21484b5bfa2ea6bcab4a35358bb11eb7b
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :hotels
   resources :employee_details
@@ -9,4 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :room_types
+  resources :room_details
 end
