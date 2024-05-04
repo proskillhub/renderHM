@@ -1,0 +1,11 @@
+<h1>Employee Detail</h1>
+
+<h2><%= @employee_detail.employee_name %></h2>
+<p><strong>Parents Name:</strong> <%= @employee_detail.parents_name %></p>
+<p><strong>Contact Number:</strong> <%= @employee_detail.contact_number_no %></p>
+<p><strong>Identification Card:</strong> <%= @employee_detail.identification_card %></p>
+<p><strong>Designation:</strong> <%= @employee_detail.designation %></p>
+<p><strong>Joining Date:</strong> <%= @employee_detail.joining_date %></p>
+
+<%= link_to 'Edit', edit_employee_detail_path(@employee_detail) %> |
+<%= link_to 'Back', employee_details_path %>
