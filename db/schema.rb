@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_05_03_100439) do
   create_table "employee_details", force: :cascade do |t|
     t.string "employee_name"
@@ -23,10 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_03_100439) do
     t.datetime "updated_at", null: false
   end
 
-=======
-
-ActiveRecord::Schema[7.1].define(version: 2024_05_03_061654) do
->>>>>>> 54e003a21484b5bfa2ea6bcab4a35358bb11eb7b
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.text "address"
@@ -36,7 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_03_061654) do
     t.datetime "updated_at", null: false
   end
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_03_095252) do
   create_table "room_details", force: :cascade do |t|
     t.integer "room_no"
     t.decimal "rent_per_day"
@@ -53,5 +47,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_03_095252) do
   end
 
   add_foreign_key "room_details", "room_types"
-
 end
