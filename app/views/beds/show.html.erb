@@ -1,0 +1,13 @@
+<h1>Bed Details</h1>
+
+<p>
+  <strong>Size:</strong>
+  <%= @bed.bed_size %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @bed.price %>
+</p>
+
+<%= link_to 'Edit', edit_bed_path(@bed), class: 'btn btn-primary' %>
+<%= link_to 'Back to Beds', beds_path, class: 'btn btn-secondary' %>
