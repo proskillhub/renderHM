@@ -1,16 +1,7 @@
 <h1>New Room Detail</h1>
 
 <%= form_with(model: @room_detail, local: true) do |form| %>
-  <% if @room_detail.errors.any? %>
-    <div>
-      <h2><%= pluralize(@room_detail.errors.count, 'error') %> prohibited this Room Detail from being saved:</h2>
-      <ul>
-        <% @room_detail.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
 
   <div>
     <%= form.label :room_no, 'Room Number' %>
@@ -26,10 +17,16 @@
     <%= form.label :room_type_id, 'Room Type' %>
     <%= form.collection_select(:room_type_id, RoomType.all, :id, :room_type, prompt: 'Select Room Type') %>
   </div>
+
   <div>
   <%= form.label :roomstatus %>
   <%= form.select :roomstatus, RoomDetail.roomstatuses.keys.map { |status| [status.capitalize, status] }, prompt: 'Select Room Status' %>
 </div>
+
+   <div class="form-group">
+    <%= form.label :bookingstatus %>
+    <%= form.select :booking_status, ['available', 'occupied', 'maintenance'], prompt: 'Select Room Status', class: 'form-control' %>  <!-- Correct method -->
+  </div>
 
 
   <div>

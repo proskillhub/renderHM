@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_06_073827) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
   create_table "beds", force: :cascade do |t|
     t.string "bed_size"
     t.decimal "price"
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_073827) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "roomstatus"
+    t.integer "booking_status"
     t.index ["room_type_id"], name: "index_room_details_on_room_type_id"
   end
 
