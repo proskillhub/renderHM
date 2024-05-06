@@ -26,6 +26,11 @@
     <%= form.label :room_type_id, 'Room Type' %>
     <%= form.collection_select(:room_type_id, RoomType.all, :id, :room_type, prompt: 'Select Room Type') %>
   </div>
+  <div>
+  <%= form.label :roomstatus %>
+  <%= form.select :roomstatus, RoomDetail.roomstatuses.keys.map { |status| [status.capitalize, status] }, prompt: 'Select Room Status' %>
+</div>
+
 
   <div>
     <%= form.submit 'Create Room Detail' %>

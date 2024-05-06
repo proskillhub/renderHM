@@ -49,7 +49,7 @@ class RoomDetailsController < ApplicationController
     end
   
     def room_detail_params
-      params.require(:room_detail).permit(:room_no, :rent_per_day, :room_type_id) # Include room_type_id
+      params.require(:room_detail).permit(:room_no, :rent_per_day, :roomstatus,:room_type_id) # Include room_type_id
     end
   end
   
