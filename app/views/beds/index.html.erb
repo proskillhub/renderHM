@@ -1,0 +1,27 @@
+<h1>All Beds</h1>
+
+<%= link_to 'New Bed', new_bed_path, class: 'btn btn-primary' %> <!-- Moved outside the table -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Bed Size</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beds.each do |bed| %> <!-- Start of loop over beds -->
+      <tr>
+        <td><%= bed.bed_size %></td> <!-- Fixed attribute name -->
+        <td><%= bed.price %></td> <!-- Correctly referenced -->
+        <td>
+          <%= link_to 'Show', bed_path(bed), class: 'btn btn-info' %>
+          <%= link_to 'Edit', edit_bed_path(bed), class: 'btn btn-warning' %>
+          <%= link_to 'Delete', bed, data: {  turbo_method: :delete,  turbo_confirm: "Are you sure?" } %> <!-- Corrected syntax -->
+
+        </td>
+      </tr>
+    <% end %> <!-- End of loop over beds -->
+  </tbody>
+</table>

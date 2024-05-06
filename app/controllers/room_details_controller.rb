@@ -1,4 +1,5 @@
 class RoomDetailsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create ,:destroy ,:update]
     before_action :set_room_detail, only: %i[show edit update destroy]
   
     def index
