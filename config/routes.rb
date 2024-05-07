@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'check_ins/new'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :hotels
   resources :beds
+  resources :check_ins
   
   resources :employee_details
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
