@@ -10,12 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
+
   create_table "beds", force: :cascade do |t|
     t.string "bed_size"
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "check_ins", force: :cascade do |t|
+    t.string "guest_id"
+    t.string "guest_name"
+    t.string "address"
+    t.integer "phone_number"
+    t.string "id_type"
+    t.string "id_number"
+    t.string "gender"
+    t.string "purpose"
+    t.datetime "arrival_and_departure"
+    t.string "note"
+    t.datetime "check_in_date"
+    t.time "check_in_time"
+    t.integer "no_of_day"
+    t.datetime "check_out_date"
+    t.datetime "check_out_time"
+    t.string "room_number"
+    t.string "room_type"
+    t.decimal "rent_per_day"
+    t.decimal "total_charges"
+    t.integer "number_of_adults"
+    t.integer "number_of_children"
+    t.integer "bed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_check_ins_on_bed_id"
   end
 
   create_table "employee_details", force: :cascade do |t|
@@ -55,5 +85,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "check_ins", "beds"
   add_foreign_key "room_details", "room_types"
 end

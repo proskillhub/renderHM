@@ -1,0 +1,65 @@
+<!-- app/views/check_ins/index.html.erb -->
+<h1>Check-Ins</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Guest ID</th>
+      <th>Guest Name</th>
+      <th>Address</th>
+      <th>Phone Number</th>
+      <th>ID Type</th>
+      <th>ID Number</th>
+      <th>Gender</th>
+      <th>Purpose</th>
+      <th>Arrival and Departure</th>
+      <th>Note</th>
+      <th>Check-in Date</th>
+      <th>Check-in Time</th>
+      <th>Number of Days</th>
+      <th>Check-out Date</th>
+      <th>Check-out Time</th>
+      <th>Room Number</th>
+      <th>Room Type</th>
+      <th>Rent Per Day</th>
+      <th>Total Charges</th>
+      <th>Number of Adults</th>
+      <th>Number of Children</th>
+      <th>Bed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @check_ins.each do |check_in| %>
+      <tr>
+        <td><%= check_in.guest_id %></td>
+        <td><%= check_in.guest_name %></td>
+        <td><%= check_in.address %></td>
+        <td><%= check_in.phone_number %></td>
+        <td><%= check_in.id_type %></td>
+        <td><%= check_in.id_number %></td>
+        <td><%= check_in.gender %></td>
+        <td><%= check_in.purpose %></td>
+        <td><%= check_in.arrival_and_departure %></td>
+        <td><%= check_in.note %></td>
+        <td><%= check_in.check_in_date %></td>
+        <td><%= check_in.check_in_time.strftime("%H:%M") if check_in.check_in_time %></td>
+        <td><%= check_in.no_of_day %></td>
+        <td><%= check_in.check_out_date %></td>
+        <td><%= check_in.check_out_time.strftime("%H:%M") if check_in.check_out_time %></td>
+        <td><%= check_in.room_number %></td>
+        <td><%= check_in.room_type %></td>
+        <td><%= number_to_currency(check_in.rent_per_day) %></td>
+        <td><%= number_to_currency(check_in.total_charges) %></td>
+        <td><%= check_in.number_of_adults %></td>
+        <td><%= check_in.number_of_children %></td>
+        <td><%= check_in.bed_id %></td>
+        <td><%= link_to 'Show', check_in %></td>
+        <td><%= link_to 'Edit', edit_check_in_path(check_in) %></td>
+        <td>   <%= link_to "Destroy", check_in, data: {  turbo_method: :delete,  turbo_confirm: "Are you sure?" } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Check-In', new_check_in_path, class: 'btn btn-primary' %>
