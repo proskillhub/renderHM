@@ -7,4 +7,6 @@ class RoomDetail < ApplicationRecord
     reserved: 2,
     maintenance: 3
   }
+
+  has_many :check_ins
 end

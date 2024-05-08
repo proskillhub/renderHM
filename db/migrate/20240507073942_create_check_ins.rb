@@ -16,9 +16,6 @@ class CreateCheckIns < ActiveRecord::Migration[7.1]
       t.integer :no_of_day
       t.datetime :check_out_date
       t.datetime :check_out_time
-      t.string :room_number
-      t.string :room_type
-      t.decimal :rent_per_day
       t.decimal :total_charges
       t.integer :number_of_adults
       t.integer :number_of_children
