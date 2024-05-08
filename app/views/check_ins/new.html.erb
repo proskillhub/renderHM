@@ -1,0 +1,125 @@
+<h1>CheckIns#new</h1>
+<p>Find me in app/views/check_ins/new.html.erb</p>
+
+
+
+<!-- app/views/check_ins/new.html.erb -->
+<h1>New Check-In</h1>
+
+<%= form_with(model: @check_in, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :guest_id %>
+    <%= form.text_field :guest_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guest_name %>
+    <%= form.text_field :guest_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_type %>
+    <%= form.text_field :id_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_number %>
+    <%= form.text_field :id_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purpose %>
+    <%= form.text_field :purpose %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival_and_departure %>
+    <%= form.datetime_select :arrival_and_departure %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_in_date %>
+    <%= form.date_select :check_in_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_in_time %>
+    <%= form.time_select :check_in_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_of_day %>
+    <%= form.number_field :no_of_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_out_date %>
+    <%= form.date_select :check_out_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check_out_time %>
+    <%= form.time_select :check_out_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_number %>
+    <%= form.text_field :room_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_type %>
+    <%= form.text_field :room_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rent_per_day %>
+    <%= form.number_field :rent_per_day, step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_charges %>
+    <%= form.number_field :total_charges, step: 0.01 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_adults %>
+    <%= form.number_field :number_of_adults %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_children %>
+    <%= form.number_field :number_of_children %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bed_id %>
+    <%= form.text_field :bed_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', check_ins_path, class: 'btn btn-secondary' %>

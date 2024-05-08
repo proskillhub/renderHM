@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guest_id: MyString
+  guest_name: MyString
+  address: MyString
+  phone_number: 1
+  id_type: MyString
+  id_number: MyString
+  gender: MyString
+  purpose: MyString
+  arrival_and_departure: 2024-05-07 13:09:42
+  note: MyString
+  check_in_date: 2024-05-07 13:09:42
+  check_in_time: 2024-05-07 13:09:42
+  no_of_day: 1
+  check_out_date: 2024-05-07 13:09:42
+  check_out_time: 2024-05-07 13:09:42
+  room_number: MyString
+  room_type: MyString
+  rent_per_day: 9.99
+  total_charges: 9.99
+  number_of_adults: 1
+  number_of_children: 1
+  bed: one
+
+two:
+  guest_id: MyString
+  guest_name: MyString
+  address: MyString
+  phone_number: 1
+  id_type: MyString
+  id_number: MyString
+  gender: MyString
+  purpose: MyString
+  arrival_and_departure: 2024-05-07 13:09:42
+  note: MyString
+  check_in_date: 2024-05-07 13:09:42
+  check_in_time: 2024-05-07 13:09:42
+  no_of_day: 1
+  check_out_date: 2024-05-07 13:09:42
+  check_out_time: 2024-05-07 13:09:42
+  room_number: MyString
+  room_type: MyString
+  rent_per_day: 9.99
+  total_charges: 9.99
+  number_of_adults: 1
+  number_of_children: 1
+  bed: two
