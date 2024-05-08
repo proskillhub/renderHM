@@ -13,7 +13,8 @@ class RoomDetailsController < ApplicationController
     end
   
     def new
-      @room_detail = RoomDetail.new # Initializes a new RoomDetail
+      @room_detail = RoomDetail.new(booking_status: 'available')
+      
     end
   
     def create
@@ -49,7 +50,7 @@ class RoomDetailsController < ApplicationController
     end
   
     def room_detail_params
-      params.require(:room_detail).permit(:room_no, :rent_per_day, :roomstatus,:room_type_id) # Include room_type_id
+      params.require(:room_detail).permit(:room_no, :rent_per_day, :roomstatus,:room_type_id,:booking_status) # Include room_type_id
     end
   end
   
