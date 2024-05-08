@@ -1,4 +1,3 @@
-# app/controllers/check_ins_controller.rb
 class CheckInsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create ,:destroy ,:update]
   before_action :set_check_in, only: [:show, :edit, :update, :destroy]
@@ -7,6 +6,7 @@ class CheckInsController < ApplicationController
   def index
     @check_ins = CheckIn.all
     render json:@check_ins
+   
   end
 
   # GET /check_ins/1
@@ -54,8 +54,8 @@ class CheckInsController < ApplicationController
       @check_in = CheckIn.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a list of trusted parameters through.
     def check_in_params
-      params.require(:check_in).permit(:guest_id, :guest_name, :address, :phone_number, :id_type, :id_number, :gender, :purpose, :arrival_and_departure, :note, :check_in_date, :check_in_time, :no_of_day, :check_out_date, :check_out_time, :room_number, :room_type, :rent_per_day, :total_charges, :number_of_adults, :number_of_children, :bed_id)
+      params.require(:check_in).permit(:guest_id, :guest_name, :address, :phone_number, :id_type, :id_number, :gender, :purpose, :arrival_and_departure, :note, :check_in_date, :check_in_time, :no_of_day, :check_out_date, :check_out_time, :total_charges, :number_of_adults, :number_of_children, :bed_id, :room_detail_id, :room_type_id)
     end
 end

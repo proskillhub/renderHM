@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
-
+ActiveRecord::Schema[7.1].define(version: 2024_05_08_094319) do
   create_table "beds", force: :cascade do |t|
     t.string "bed_size"
     t.decimal "price"
@@ -36,16 +34,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
     t.integer "no_of_day"
     t.datetime "check_out_date"
     t.datetime "check_out_time"
-    t.string "room_number"
-    t.string "room_type"
-    t.decimal "rent_per_day"
     t.decimal "total_charges"
     t.integer "number_of_adults"
     t.integer "number_of_children"
     t.integer "bed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "room_detail_id", null: false
+    t.integer "room_type_id", null: false
     t.index ["bed_id"], name: "index_check_ins_on_bed_id"
+    t.index ["room_detail_id"], name: "index_check_ins_on_room_detail_id"
+    t.index ["room_type_id"], name: "index_check_ins_on_room_type_id"
   end
 
   create_table "employee_details", force: :cascade do |t|
@@ -75,7 +74,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "roomstatus"
-    t.integer "booking_status"
     t.index ["room_type_id"], name: "index_room_details_on_room_type_id"
   end
 
@@ -86,5 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_095146) do
   end
 
   add_foreign_key "check_ins", "beds"
+  add_foreign_key "check_ins", "room_details"
+  add_foreign_key "check_ins", "room_types"
   add_foreign_key "room_details", "room_types"
 end
