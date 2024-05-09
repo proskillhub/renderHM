@@ -1,0 +1,32 @@
+<h1>Room Changes</h1>
+
+<%= link_to "New Room Change", new_change_room_path, class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Reason</th>
+      <th>Room Type</th>
+      <th>Room Detail</th>
+      <th>Check-in ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @change_rooms.each do |change_room| %>
+      <tr>
+        <td><%= change_room.id %></td>
+        <td><%= change_room.reason %></td>
+        <td><%= change_room.room_type_id %></td> <!-- Replace with room type details if associated -->
+        <td><%= change_room.room_detail_id %></td> <!-- Replace with room detail description if associated -->
+        <td><%= change_room.check_in_id %></td>
+        <td>
+          <%= link_to "Show", change_room %>
+          <%= link_to "Edit", edit_change_room_path(change_room) %>
+          <%= link_to "Delete", change_room, method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

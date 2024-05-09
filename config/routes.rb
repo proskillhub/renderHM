@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :hotels
   resources :beds
   resources :check_ins
+  resources :change_rooms
   
   resources :employee_details
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

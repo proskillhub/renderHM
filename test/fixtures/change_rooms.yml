@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_no: MyString
+  room_type: MyString
+  rent_per_day: 9.99
+  reason: MyText
+
+two:
+  room_no: MyString
+  room_type: MyString
+  rent_per_day: 9.99
+  reason: MyText

@@ -1,5 +1,5 @@
 class RoomDetail < ApplicationRecord
-  belongs_to :room_type
+  
   enum roomstatus: { dirty: 0, clean: 1 }
   enum booking_status: {
     available: 0,  # This should match the expected value
@@ -8,5 +8,10 @@ class RoomDetail < ApplicationRecord
     maintenance: 3
   }
 
+  belongs_to :room_type
+  has_many :change_rooms
+
+
   has_many :check_ins
+
 end

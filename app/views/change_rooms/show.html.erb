@@ -1,0 +1,9 @@
+<h1>Change Room Details</h1>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @change_room.reason %>
+</p>
+
+<%= link_to "Edit", edit_change_room_path(@change_room), class: "btn btn-primary" %>
+<%= link_to "Back to Change Rooms", change_rooms_path, class: "btn btn-secondary" %>

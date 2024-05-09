@@ -1,0 +1,25 @@
+<%= form_with(model: @change_room, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :check_in_id, "Select Check-In" %>
+    <%= f.collection_select(:check_in_id, @check_ins, :id, :id, prompt: "Choose Check-In") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :room_type_id, "Room Type" %>
+    <%= f.collection_select(:room_type_id, RoomType.all, :id, :room_type, prompt: "Choose Room Type") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_detail_id, "Room Detail" %>
+    <%= f.collection_select(:room_detail_id, RoomDetail.all, :id, :room_no, prompt: "Choose Room Detail") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reason, "Reason for Change" %>
+    <%= f.text_area :reason %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
