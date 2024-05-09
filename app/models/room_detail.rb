@@ -7,6 +7,11 @@ class RoomDetail < ApplicationRecord
     reserved: 2,
     maintenance: 3
   }
+
   belongs_to :room_type
   has_many :change_rooms
+
+
+  has_many :check_ins
+
 end
