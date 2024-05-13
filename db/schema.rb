@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_05_08_094319) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "beds", force: :cascade do |t|
     t.string "bed_size"
     t.decimal "price"
@@ -22,9 +25,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_094319) do
     t.text "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "room_type_id", null: false
-    t.integer "room_detail_id", null: false
-    t.integer "check_in_id", null: false
+    t.bigint "room_type_id", null: false
+    t.bigint "room_detail_id", null: false
+    t.bigint "check_in_id", null: false
     t.index ["check_in_id"], name: "index_change_rooms_on_check_in_id"
     t.index ["room_detail_id"], name: "index_change_rooms_on_room_detail_id"
     t.index ["room_type_id"], name: "index_change_rooms_on_room_type_id"
@@ -49,11 +52,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_094319) do
     t.decimal "total_charges"
     t.integer "number_of_adults"
     t.integer "number_of_children"
-    t.integer "bed_id", null: false
+    t.bigint "bed_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "room_detail_id", null: false
-    t.integer "room_type_id", null: false
+    t.bigint "room_detail_id", null: false
+    t.bigint "room_type_id", null: false
     t.index ["bed_id"], name: "index_check_ins_on_bed_id"
     t.index ["room_detail_id"], name: "index_check_ins_on_room_detail_id"
     t.index ["room_type_id"], name: "index_check_ins_on_room_type_id"
@@ -82,7 +85,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_094319) do
   create_table "room_details", force: :cascade do |t|
     t.integer "room_no"
     t.decimal "rent_per_day"
-    t.integer "room_type_id", null: false
+    t.bigint "room_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "roomstatus"
